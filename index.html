@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Farmcart</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <h1>Farmcart</h1>
+    <div class="nav-buttons">
+      <button onclick="showView('buy')">Buy</button>
+      <button onclick="showView('sell')">Sell</button>
+      <button onclick="showView('account')">Your Account</button>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div id="home-view" class="view active">
+      <h2>Welcome to Farmcart</h2>
+    </div>
+
+    <div id="buy-view" class="view">
+      <div class="product-grid" id="product-grid"></div>
+    </div>
+
+    <div id="sell-view" class="view">
+      <h2>List Your Product</h2>
+      <input type="text" placeholder="Product Name"/>
+      <input type="number" placeholder="Price"/>
+      <input type="text" placeholder="Description"/>
+      <button>Submit</button>
+    </div>
+
+    <div id="account-view" class="view">
+      <h2>Your Account</h2>
+      <p>Name: John Doe</p>
+      <p>Email: johndoe@example.com</p>
+      <p>Orders: 5</p>
+      <button>Logout</button>
+    </div>
+  </main>
+
+  <!-- Chatbot -->
+  <div id="chatbot" class="chatbot hidden">
+    <div class="chat-header">
+      <span>Farmcart Assistant</span>
+      <button onclick="toggleChat()">X</button>
+    </div>
+    <div id="chat-log" class="chat-log"></div>
+    <div class="chat-input">
+      <input id="chat-input" type="text" placeholder="Ask a question..." />
+      <button onclick="sendChat()">Send</button>
+    </div>
+  </div>
+
+  <button id="chat-button" onclick="toggleChat()">💬</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
